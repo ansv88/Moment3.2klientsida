@@ -93,12 +93,18 @@ async function getJobs() {
                         : "Pågående"
                     }</p>
                     <p>Beskrivning: ${job.description}</p>
-                    <button onclick="deleteJob('${
-                      job._id
-                    }')" class="deleteButton">Ta bort</button>
+                    <button class="deleteButton" data-id="${job._id}">Ta bort</button>
                 `;
       displayJobsEl.appendChild(jobElement);
     });
+
+    document.querySelectorAll('.deleteButton').forEach(button => {
+      button.addEventListener('click', function() {
+        const jobId = this.getAttribute('data-id');
+        deleteJob(jobId);
+      });
+    });
+
   } catch (error) {
     console.error("Error:", error);
     displayJobsEl.innerHTML = `<p>Fel vid hämtning av arbetslivserfarenheter: ${error.message}</p>`;
@@ -115,7 +121,7 @@ async function addJob() {
   const endDate = document.getElementById("end_date").value;
   const description = document.getElementById("description").value;
 
-  // Rensa tidigare felmeddelanden
+  //Rensa tidigare felmeddelanden
   document.querySelectorAll(".error-text").forEach((error) => (error.textContent = ""));
 
   let isValid = true;
@@ -147,9 +153,9 @@ async function addJob() {
     isValid = false;
   }
 
-  // Om formuläret är giltigt, skicka datan
-  if (isValid) {
-    addJob();
+  //Om formuläret inte är giltigt, avbryt funktionen
+  if (!isValid) {
+    return;
   }
 
   //Skapa ett objekt för att skicka datan
@@ -180,8 +186,11 @@ async function addJob() {
 
     const responseData = await response.json();
     document.getElementById("jobInput").reset(); //Töm formuläret
-    alert("Arbetslivserfarenhet tillagd!");
-    console.log("Success:", responseData);
+    document.getElementById("confirmText").innerHTML = `<p>Arbetslivserfarenhet tillagd!</p>`;
+     console.log("Success:", responseData);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });     //Scrolla till toppen av sidan när arbetslivserfarenheten är tillagd
+
   } catch (error) {
     console.error("Error:", error);
     document.getElementById("errorText").innerHTML = `<p>Det gick inte att lägga till arbetslivserfarenheten.</p><p>Försök igen senare.</p>`;
@@ -208,7 +217,9 @@ async function deleteJob(_id) {
       );
     }
 
-    alert("Arbetslivserfarenheten har tagits bort.");
+    document.getElementById("confirmText").innerHTML = `<p>[ Arbetslivserfarenheten har tagits bort ]</p>`;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' }); //Scrolla till toppen av sidan när arbetslivserfarenheten är tillagd
 
     document.getElementById("displayJobs").innerHTML ="<p>Uppdaterar listan...</p>";
     await getJobs(); //Uppdatera listan av jobb
