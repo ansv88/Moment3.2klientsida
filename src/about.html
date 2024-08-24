@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT207G - Moment 3.2 | CV</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navwrapper">
+            <a class="link" href="index.html">CV - Arbetslivserfarenhet</a>
+            <a class="link" href="add.html">Lägg till ny</a>
+            <a class="link active" href="about.html">Om sidan</a>
+        </nav>
+    </header>
+    <main id="aboutmain">
+
+        <h1>Om sidan</h1>
+
+        <article id="articleabout">
+            <p>Denna webbsida är en labb i kursen <em>DT207G Backend-baserad webbutveckling</em> från <a
+                    href="https://www.miun.se">Mittuniversitetet</a>. Uppgiften är uppdelad i två delar - en för att skapa en
+                REST-webbtjänst som använder MongoDB som databasserver och en för att skapa en webbplats/applikation som använder REST-webbtjänsten. <br><br> Denna webbplats
+                är den senare av dem.</p>
+            <h2>Mål</h2>
+            <p>Målet med uppgiften är att skapa en applikation som hanterar arbetserfarenheter, så som tidigare
+                arbetsplatser, vad du arbetade med, längd på anställning etcetra.</p>
+            <h2>Syfte med labben</h2>
+            <ul>
+                <li>Känna till NoSQL-databaser.</li>
+                <li>Kunna skapa och administrera MongoDB-databaser.</li>
+                <li>Kunna skapa en REST-baserad webbtjänst med NodeJs, Express och MongoDb.</li>
+            </ul>
+            <h2>Server, databas och publicering</h2>
+            <p>Jag har använt Node.js tillsammans med npm-paketet Parcel för
+                detta projektet. Webbtjänsten som anropas använder MongoDB och MongoDBAtlas som databashanterare. Både webbplatsen och
+                webbtjänsten är publicerade via Render.</p>
+            <h2>Slutsatser</h2>
+            <p>Jag tycker att det har gått ganska bra att göra den här uppgiften, då mycket har kunnat återanvändas från moment 2. Dock tycker jag att det är lite rörigt att hålla ordning på och hitta alla bra funktioner i de olika delarna MongoDB och mongoose (till exempel findByIdAndDelete).</p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li>DT207G - Moment 3.2</li>
+            <li>© 2024 Annelie Svensson</li>
+        </ul>
+    </footer>
+</body>
+
+</html>

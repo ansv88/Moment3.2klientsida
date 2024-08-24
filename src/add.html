@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT207G - Moment 3.2 | CV</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navwrapper">
+            <a class="link" href="index.html">CV - Arbetslivserfarenhet</a>
+            <a class="link active" href="add.html">Lägg till ny</a>
+            <a class="link" href="about.html">Om sidan</a>
+        </nav>
+    </header>
+
+    <main id="formwrapper">
+        <h1>Lägg till ny arbetslivserfarenhet</h1>
+        <form id="jobInput">
+            <div class="form-row">
+                <label for="jobtitle">Befattning/yrkesroll</label>
+                <input id="jobtitle" type="text" placeholder="Befattning/yrkesroll" name="title">
+                <span class="error-text" id="jobtitle-error"></span>
+            </div>
+            <div class="form-row">
+                <label for="companyname">Arbetsplats</label>
+                <input id="companyname" type="text" placeholder="Arbetsplats/företag" name="name">
+                <span class="error-text" id="companyname-error"></span>
+            </div>
+            <div class="form-row">
+                <label for="location">Ort</label>
+                <input id="location" type="text" placeholder="Arbetsort" name="location">
+                <span class="error-text" id="location-error"></span>
+            </div>
+            <div class="form-row">
+                <label for="start_date">Startdatum</label>
+                <input id="start_date" type="date" placeholder="Startdatum för anställning" name="start_date">
+                <span class="error-text" id="start_date-error"></span>
+            </div>
+            <div class="form-row">
+                <label for="end_date">Slutdatum (valfritt)</label>
+                <input id="end_date" type="date" placeholder="Ev slutdatum för anställning" name="end_date">
+            </div>
+             <div class="form-row">
+                <label for="description">Arbetsuppgifter</label>
+                <textarea id="description" name="description" rows="4" placeholder="Beskrivning av arbetsuppgifter"></textarea>
+                <span class="error-text" id="description-error"></span>
+            </div>
+                        
+            <div class="buttonwrapper">
+                <input type="submit" value="Lägg till arbetslivserfarenhet" id="submitbutton">
+            </div>
+
+            <div id="errorText"></div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li>DT207G - Moment 3.2</li>
+            <li>© 2024 Annelie Svensson</li>
+        </ul>
+    </footer>
+</body>
+
+</html>
