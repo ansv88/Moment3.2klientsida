@@ -82,7 +82,7 @@ async function getJobs() {
       jobElement.className = "job";
       jobElement.innerHTML = `
                     <h2>${job.jobtitle}</h2>
-                    <p>Arbetsplats: ${job.companyname}</p>
+                    <p>Arbetsgivare: ${job.companyname}</p>
                     <p>Ort: ${job.location}</p>
                     <p>Startdatum: ${new Date(
                       job.start_date
